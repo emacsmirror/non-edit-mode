@@ -37,6 +37,7 @@
           funcs)
     (define-key non-edit-mode-map (kbd "<remap>") ignored-map)))
 
+;;;###autoload
 (defgroup non-edit nil
   "Customization variables for Non-Edit mode."
   :group 'convenience
