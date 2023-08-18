@@ -29,7 +29,7 @@
 
 (defvar non-edit-mode-map (make-sparse-keymap))
 
-(defun non-edit--update-non-edit-keymap (_ funcs)
+(defun non-edit--update-keymap (_ funcs)
   (let ((ignored-map (make-sparse-keymap)))
     (mapc (lambda (func)
             (define-key ignored-map
@@ -49,9 +49,9 @@
     self-insert-command)
   "List of functions to disable in non-edit mode."
   :group 'non-edit
-  :type 'list
+  :type '(list function)
   :safe 'listp
-  :set #'non-edit--update-non-edit-keymap)
+  :set #'non-edit--update-keymap)
 
 ;;;###autoload
 (define-minor-mode non-edit-mode
