@@ -42,6 +42,7 @@
   :group 'convenience
   :tag "Non-Edit")
 
+;;;###autoload
 (defcustom non-edit-disabled-functions
   '(backward-delete-char-untabify
     delete-forward-char
