@@ -1,8 +1,10 @@
-;;; non-edit-mode.el -- Minor mode that disables editing -*- lexical-binding: t; -*-
+;;; non-edit-mode.el --- Minor mode that disables editing -*- lexical-binding: t; -*-
 
 ;; Author: aragaer <aragaer@gmail.com>
 ;; Version: 0.1.0
-;; Keywords: read-only
+;; Package-Requires: ((emacs "28.2") (compat "29.1.1.0"))
+;; URL: https://gitlab.com/aragaer/non-edit-mode
+;; Keywords: convenience
 
 ;;; License:
 ;;
@@ -23,6 +25,8 @@
 ;;
 ;; Minor mode that disables most editing commands.
 
+;;; Code:
+
 (defvar-keymap non-edit-mode-map
   "<remap> <backward-delete-char-untabify>" #'ignore
   "<remap> <delete-forward-char>" #'ignore
@@ -34,7 +38,6 @@
   "Minor mode that disables any input"
   :lighter " Nav")
 
-;;;###autoload
-(define-key global-map (kbd "C-<escape>") 'non-edit-mode)
+(provide 'non-edit-mode)
 
 ;;; non-edit-mode.el ends here
