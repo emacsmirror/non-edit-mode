@@ -5,6 +5,16 @@ mode in Vi). Can be used to protect files from being edited, while
 also allowing copy/paste operations, editing org header properties and
 tags etc.
 
+## Customization
+
+List of functions to disable can be specified in
+`non-edit-disabled-functions` variable. Default value is the following
+list:
+- `backward-delete-char-untabify`
+- `delete-forward-char`
+- `newline`
+- `self-insert-command`
+
 ## Examples
 
 ### Toggle non-edit mode

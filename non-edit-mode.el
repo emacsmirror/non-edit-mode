@@ -27,11 +27,30 @@
 
 ;;; Code:
 
-(defvar-keymap non-edit-mode-map
-  "<remap> <backward-delete-char-untabify>" #'ignore
-  "<remap> <delete-forward-char>" #'ignore
-  "<remap> <newline>" #'ignore
-  "<remap> <self-insert-command>" #'ignore)
+(defvar non-edit-mode-map (make-sparse-keymap))
+
+(defun update-non-edit-keymap (_ funcs)
+  (setq non-edit-mode-map (make-sparse-keymap))
+  (mapc (lambda (func)
+          (define-key non-edit-mode-map
+            (kbd (format "<remap> <%s>" func)) #'ignore))
+        funcs))
+
+(defgroup non-edit nil
+  "Customization variables for Non-Edit mode."
+  :group 'convenience
+  :tag "Non-Edit")
+
+(defcustom non-edit-disabled-functions
+  '(backward-delete-char-untabify
+    delete-forward-char
+    newline
+    self-insert-command)
+  "List of functions to disable in non-edit mode."
+  :group 'non-edit
+  :type 'list
+  :safe 'listp
+  :set #'update-non-edit-keymap)
 
 ;;;###autoload
 (define-minor-mode non-edit-mode
