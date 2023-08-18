@@ -2,7 +2,7 @@
 
 ;; Author: aragaer <aragaer@gmail.com>
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "28.2") (compat "29.1.1.0"))
+;; Package-Requires: ((emacs "24.1"))
 ;; URL: https://gitlab.com/aragaer/non-edit-mode
 ;; Keywords: convenience
 
@@ -29,12 +29,13 @@
 
 (defvar non-edit-mode-map (make-sparse-keymap))
 
-(defun update-non-edit-keymap (_ funcs)
-  (setq non-edit-mode-map (make-sparse-keymap))
-  (mapc (lambda (func)
-          (define-key non-edit-mode-map
-            (kbd (format "<remap> <%s>" func)) #'ignore))
-        funcs))
+(defun non-edit--update-non-edit-keymap (_ funcs)
+  (let ((ignored-map (make-sparse-keymap)))
+    (mapc (lambda (func)
+            (define-key ignored-map
+              (kbd (format "<%s>" func)) #'ignore))
+          funcs)
+    (define-key non-edit-mode-map (kbd "<remap>") ignored-map)))
 
 (defgroup non-edit nil
   "Customization variables for Non-Edit mode."
@@ -50,7 +51,7 @@
   :group 'non-edit
   :type 'list
   :safe 'listp
-  :set #'update-non-edit-keymap)
+  :set #'non-edit--update-non-edit-keymap)
 
 ;;;###autoload
 (define-minor-mode non-edit-mode

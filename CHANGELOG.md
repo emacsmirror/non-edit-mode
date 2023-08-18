@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - List of functions can now be specified in `non-edit-disabled-functions'
 
+### Fixed
+- No longer depends on emacs 29 or compat-29
+
 ## 0.1.0 - 2023-08-18
 ### Added
 - License
