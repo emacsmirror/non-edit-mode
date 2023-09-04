@@ -58,7 +58,7 @@
 ;;;###autoload
 (define-minor-mode non-edit-mode
   "Minor mode that disables any input"
-  :lighter " Nav")
+  :lighter " ne")
 
 (provide 'non-edit-mode)
 

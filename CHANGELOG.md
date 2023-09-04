@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - List of functions can now be specified in `non-edit-disabled-functions'
 
+### Changed
+- Use "ne" lighter for modeline
+
 ### Fixed
 - No longer depends on emacs 29 or compat-29
 
