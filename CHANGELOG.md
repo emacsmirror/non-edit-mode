@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.2.0] - 2023-09-04
 ### Added
 - List of functions can now be specified in `non-edit-disabled-functions'
 
@@ -21,4 +23,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - This changelog
 - Initial implementation of non-edit mode
 
-[Unreleased]: https://github.com/aragaer/runner/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/aragaer/runner/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/aragaer/runner/compare/v0.1.0...v0.2.0
