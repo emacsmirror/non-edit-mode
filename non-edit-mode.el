@@ -23,7 +23,8 @@
 
 ;;; Commentary:
 ;;
-;; Minor mode that disables most editing commands.
+;; Minor mode that disables most editing commands. Should behave
+;; similar to vi/evil command mode, but without the actual bindings.
 
 ;;; Code:
 
@@ -57,7 +58,7 @@
 
 ;;;###autoload
 (define-minor-mode non-edit-mode
-  "Minor mode that disables any input"
+  "Minor mode that disables any input."
   :lighter " ne")
 
 (provide 'non-edit-mode)
